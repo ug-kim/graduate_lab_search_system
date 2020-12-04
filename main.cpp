@@ -1,8 +1,15 @@
 #include "Lab.h"
 #include "Labcontroller.h"
-using namespace std;
+#include "query.h"
+#include <iostream>
 
 int main(){
+    using std::cin;
+    using std::cout;
+    using std::endl;
+    using std::string;
+
+
     ifstream file;
 
     Labcontroller Labcontrol;
@@ -26,8 +33,10 @@ int main(){
         Labcontrol.sync_lab(input_information);
         }
     }
+  
+    Query query;
+    query.init_question();
 
-    Labcontrol.add_lab("E3", "BIO", "CHOI");
-    Labcontrol.show_lab();
+    query.print();
 
 }

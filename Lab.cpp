@@ -54,11 +54,33 @@ void Lab::show_lab_information(){
     std::cout << "career: " << career << std::endl;
     std::cout << "URL: " << URL << std::endl;
     std::cout << "field :" << field1 << "," << field2 << "," << field3 << std::endl;
+    return "";
+}
+
+std::string Lab::get_field2(){
+    return "";
+}
+
+std::string Lab::get_field3(){
+    return "";
 }
 
 void Lab::calculate_score(){
-
+    int count = 0;
+    for (auto v : w_fields) {
+        if (field1 != "" && field1 == v.first) {
+            score += v.second;
+        }
+        else if (field2 != "" && field2 == v.first) {
+            score += v.second;
+        }
+        else if (field3 != "" && field3 == v.first) {
+            score += v.second;
+        }
+        count++;
+    }
 }
+
 
 E3_ICE::E3_ICE(std::vector<std::string> information) : Lab(information) {}
 std::string E3_ICE::get_major()
@@ -67,7 +89,8 @@ std::string E3_ICE::get_major()
 }
 
 E5_ROBOT::E5_ROBOT(std::vector<std::string> information) : Lab(information) {}
-std::string E3_ICE::get_major()
+std::string E5_ROBOT::get_major()
+
 {
     return major;
 }

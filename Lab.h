@@ -1,5 +1,7 @@
 #pragma once
 
+#include "query.h"
+
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -8,7 +10,7 @@
 #include <vector>
 #include <memory>
 
-class Lab{
+class Lab : public Query{
     private:
         std::string lab_name;
         std::string professor_name;

@@ -29,9 +29,9 @@ int main(){
                 std::getline(file, content, ',');
                 input_information.push_back(content);
             }
-
         }
-        Labcontrol.sync_lab(input_information);
+        Labcontrol.E3_sync_lab(input_information);
+        Labcontrol.E5_sync_lab(input_information);
         }
     }
   

@@ -39,6 +39,8 @@ class Lab{
 
         std::string get_field3();
 
+        void show_lab_information();
+
         int score = 0;
 
         void calculate_score();
@@ -53,11 +55,11 @@ class E3_ICE: public Lab{
         std::string get_major();
 };
 
-class E5_ICE: public Lab{
+class E5_ROBOT: public Lab{
     private:
         std::string major = "E5";
 
     public:
-        E5_ICE(std::vector<std::string> information);
+        E5_ROBOT(std::vector<std::string> information);
         std::string get_major();
 };

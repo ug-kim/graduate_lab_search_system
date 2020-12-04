@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include "Labcontroller.h"
 #include "Lab.h"
 
@@ -10,7 +12,7 @@ void Labcontroller::E3_sync_lab(std::vector<std::string> information)
 
 void Labcontroller::E5_sync_lab(std::vector<std::string> information)
 {
-    E5_ROBOT *ptr = new E5_ROBOT(information);
+    Lab *ptr = new Lab(information);
     E5_list.push_back(ptr);
 }
 
@@ -55,9 +57,29 @@ void Labcontroller::show_lab(Lab* lab)
     
 }
 
+bool cmp(const Lab* a, const Lab* b) {
+    if (a->score == b->score) return a->score > b->score;
+    return a->score > b->score;
+}
 
-int Labcontroller::get_size()
-{
-    return list.size();
+void Labcontroller::sort_lab(std::vector<Lab*>& input_list) {
+    sort(input_list.begin(), input_list.end(), cmp);
+}
+
+void Labcontroller::execute_controller() {
+    std::cout << "Lab controller" << std::endl;
+    for (auto v : E5_list) {
+        v->calculate_score(w_fields);
+    }
+
+    sort_lab(E5_list);
+
+    for (auto v : E5_list) {
+        std::cout << "-------------------------" << std::endl;
+        std::cout << "name:  " << v->get_lab_name() << std::endl;
+        std::cout << v->score << std::endl;
+        std::cout << v->get_field1() << v->get_field2() << v->get_field3() << std::endl;
+        std::cout << "-------------------------" << std::endl;
+    }
 }
 

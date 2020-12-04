@@ -15,29 +15,31 @@ int main(){
 
     Labcontroller Labcontrol;
     
-    file.open("/Users/ChoiDaeGun/Desktop/robotics_lab_db_final.csv");
+    file.open("robotics_lab_db_final.csv");
     if(file.is_open()){
         while(!file.eof()){
-        std::string content;
-        std::vector<std::string> input_information;
-        for(int i = 0; i < 7; i++){
-            if(i == 6){
-                std::getline(file, content, '\n');
-                input_information.push_back(content);
+            std::string content;
+            std::vector<std::string> input_information;
+            for(int i = 0; i < 7; i++){
+                if(i == 6){
+                    std::getline(file, content, '\n');
+                    input_information.push_back(content);
+                }
+                else{
+                    std::getline(file, content, ',');
+                    input_information.push_back(content);
+                }
             }
-            else{
-                std::getline(file, content, ',');
-                input_information.push_back(content);
-            }
-        }
-        Labcontrol.E3_sync_lab(input_information);
-        Labcontrol.E5_sync_lab(input_information);
+            // Labcontrol.E3_sync_lab(input_information);
+            Labcontrol.E5_sync_lab(input_information);
         }
     }
-  
-    Query query;
-    query.init_question();
 
-    query.print();
+    Labcontrol.execute_controller();
+
+    // Query query;
+    // query.init_question();
+
+    // query.print();
 
 }

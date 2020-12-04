@@ -38,6 +38,9 @@ public:
 
 class Query : public Fields {
 public:
+    // "none" - no major, "E3" and "E5"
+    std::string major;
+    
     // top 3 results
     std::vector<std::string> fields;
 
@@ -46,9 +49,6 @@ public:
 private:
     // counting fields at case 2
     std::map<std::string, int> union_counts;
-
-    // "none" - no major, "E3" and "E5"
-    std::string major;
 
     std::vector<Akinator> no_major_questions;
 

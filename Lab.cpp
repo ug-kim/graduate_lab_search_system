@@ -1,4 +1,7 @@
+#include <map>
+
 #include "Lab.h"
+
 
 Lab::Lab() {}
 Lab::Lab(std::string i_lab_name, std::string i_professor_name)
@@ -54,18 +57,10 @@ void Lab::show_lab_information(){
     std::cout << "career: " << career << std::endl;
     std::cout << "URL: " << URL << std::endl;
     std::cout << "field :" << field1 << "," << field2 << "," << field3 << std::endl;
-    return "";
+    return;
 }
 
-std::string Lab::get_field2(){
-    return field2;
-}
-
-std::string Lab::get_field3(){
-    return field3;
-}
-
-void Lab::calculate_score(){
+void Lab::calculate_score(const std::map<std::string, int>& w_fields){
     int count = 0;
     for (auto v : w_fields) {
         if (field1 != "" && field1 == v.first) {

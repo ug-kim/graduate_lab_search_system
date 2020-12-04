@@ -37,6 +37,23 @@ std::string Lab::get_URL(){
 }
 
 std::string Lab::get_field1(){
+    return field1;
+}
+
+std::string Lab::get_field2(){
+    return field2;
+}
+
+std::string Lab::get_field3(){
+    return field3;
+}
+
+void Lab::show_lab_information(){
+    std::cout << "Lab name: " << lab_name << std::endl;
+    std::cout << "professor name: " << professor_name << std::endl;
+    std::cout << "career: " << career << std::endl;
+    std::cout << "URL: " << URL << std::endl;
+    std::cout << "field :" << field1 << "," << field2 << "," << field3 << std::endl;
     return "";
 }
 
@@ -71,8 +88,9 @@ std::string E3_ICE::get_major()
     return major;
 }
 
-E5_ICE::E5_ICE(std::vector<std::string> information) : Lab(information) {}
-std::string E5_ICE::get_major()
+E5_ROBOT::E5_ROBOT(std::vector<std::string> information) : Lab(information) {}
+std::string E5_ROBOT::get_major()
+
 {
     return major;
 }

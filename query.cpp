@@ -84,6 +84,8 @@ void Query::select_ice() {
         std::cin >> idx;
         fields.push_back(ice_fields[idx - 1]);
     }
+
+    update_fields_weights();
 }
 
 void Query::select_robotics() {
@@ -103,6 +105,8 @@ void Query::select_robotics() {
         std::cin >> idx;
         fields.push_back(robot_fields[idx - 1]);
     }
+
+    update_fields_weights();
 }
 
 /////////////////////////////////////////////////////////////
@@ -183,6 +187,7 @@ void Query::no_major_query() {
         }
     }
     update_fields();
+    update_fields_weights();
 }
 
 bool cmp(const std::pair<std::string, int>& a, const std::pair<std::string, int>& b) {
@@ -203,8 +208,31 @@ void Query::update_fields() {
     }
 }
 
+void Query::update_fields_weights() {
+    int count = 0;
+    for (auto v : fields) {
+       if (count == 0 ) {
+           // first preference, so weight is 10
+           w_fields.insert(std::make_pair(v, 10));
+       }
+       else if (count == 1) {
+           // second preference, so weight is 7
+           w_fields.insert(std::make_pair(v, 7));
+       }
+       else {
+           // third preference, so weight is 5
+           w_fields.insert(std::make_pair(v, 5));
+       }
+       count++;
+    }
+}
+
 void Query::print() {
     for (auto it = fields.begin(); it != fields.end(); it++) {
         std::cout << *it << std::endl;
+    }
+
+    for (auto v : w_fields) {
+        std::cout << v.first << " " << v.second << std::endl;
     }
 }

@@ -15,6 +15,8 @@ Query::Query() {
     }
 
     init_no_major_querys();
+    init_question();
+    print();
 }
 
 void Query::init_question() {
@@ -228,6 +230,9 @@ void Query::update_fields_weights() {
 }
 
 void Query::print() {
+    std::cout << "------------------------" << std::endl;
+    std::cout << "top 3 fields" << std::endl;
+
     for (auto it = fields.begin(); it != fields.end(); it++) {
         std::cout << *it << std::endl;
     }
@@ -235,4 +240,5 @@ void Query::print() {
     for (auto v : w_fields) {
         std::cout << v.first << " " << v.second << std::endl;
     }
+    std::cout << "------------------------" << std::endl;
 }

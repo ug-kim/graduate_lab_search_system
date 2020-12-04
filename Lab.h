@@ -1,7 +1,5 @@
 #pragma once
 
-#include "query.h"
-
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -9,8 +7,9 @@
 #include <deque>
 #include <vector>
 #include <memory>
+#include <map>
 
-class Lab : public Query{
+class Lab {
     private:
         std::string lab_name;
         std::string professor_name;
@@ -45,7 +44,7 @@ class Lab : public Query{
 
         int score = 0;
 
-        void calculate_score();
+        void calculate_score(const std::map<std::string, int>& w_fields);
 };
 
 class E3_ICE: public Lab{

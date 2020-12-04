@@ -48,13 +48,9 @@ void Labcontroller::E5_sync_lab(std::vector<std::string> information)
 //     }
 // }
 
-
 void Labcontroller::show_lab(Lab* lab)
 {
-    // std::string answer;
-    // std::getline(std::cin, answer);
-
-    
+    lab->show_lab_information();    
 }
 
 bool cmp(const Lab* a, const Lab* b) {
@@ -82,4 +78,3 @@ void Labcontroller::execute_controller() {
         std::cout << "-------------------------" << std::endl;
     }
 }
-

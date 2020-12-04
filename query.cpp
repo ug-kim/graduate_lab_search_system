@@ -82,7 +82,7 @@ void Query::select_ice() {
         if (i == 1) std::cout << i + 1 << "nd preference : ";
         if (i == 2) std::cout << i + 1 << "rd preference : ";
 
-        // TODO: idx ¹üÀ§ Ã³¸®
+        // TODO: idx ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
         std::cin >> idx;
         fields.push_back(ice_fields[idx - 1]);
     }
@@ -103,7 +103,7 @@ void Query::select_robotics() {
         if (i == 1) std::cout << i + 1 << "nd preference : ";
         if (i == 2) std::cout << i + 1 << "rd preference : ";
 
-        // TODO :idx ¹üÀ§ Ã³¸®
+        // TODO :idx ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
         std::cin >> idx;
         fields.push_back(robot_fields[idx - 1]);
     }

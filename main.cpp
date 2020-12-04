@@ -34,6 +34,7 @@ int main(){
             Labcontrol.E5_sync_lab(input_information);
         }
     }
+  
 
     Labcontrol.execute_controller();
 

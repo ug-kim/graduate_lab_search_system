@@ -60,7 +60,6 @@ void Lab::show_lab_information(){
     return;
 }
 
-
 void Lab::calculate_score(const std::map<std::string, int>& w_fields){
     int count = 0;
     for (auto v : w_fields) {
@@ -76,7 +75,6 @@ void Lab::calculate_score(const std::map<std::string, int>& w_fields){
         count++;
     }
 }
-
 
 E3_ICE::E3_ICE(std::vector<std::string> information) : Lab(information) {}
 std::string E3_ICE::get_major()

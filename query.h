@@ -40,6 +40,9 @@ class Query : public Fields {
 public:
     // top 3 results
     std::vector<std::string> fields;
+
+    // top 3 results with weight
+    std::map<std::string, int> w_fields;
 private:
     // counting fields at case 2
     std::map<std::string, int> union_counts;
@@ -64,6 +67,7 @@ private:
     void count_fields(std::vector<std::string> candidates);
     void no_major_query();
     void update_fields();
+    void update_fields_weights();
 };
 
 #endif

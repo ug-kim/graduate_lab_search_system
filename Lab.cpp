@@ -37,20 +37,33 @@ std::string Lab::get_URL(){
 }
 
 std::string Lab::get_field1(){
-    return 
+    return "";
 }
 
 std::string Lab::get_field2(){
-    return
+    return "";
 }
 
 std::string Lab::get_field3(){
-    return
+    return "";
 }
 
 void Lab::calculate_score(){
-
+    int count = 0;
+    for (auto v : w_fields) {
+        if (field1 != "" && field1 == v.first) {
+            score += v.second;
+        }
+        else if (field2 != "" && field2 == v.first) {
+            score += v.second;
+        }
+        else if (field3 != "" && field3 == v.first) {
+            score += v.second;
+        }
+        count++;
+    }
 }
+
 
 E3_ICE::E3_ICE(std::vector<std::string> information) : Lab(information) {}
 std::string E3_ICE::get_major()
@@ -59,7 +72,7 @@ std::string E3_ICE::get_major()
 }
 
 E5_ICE::E5_ICE(std::vector<std::string> information) : Lab(information) {}
-std::string E3_ICE::get_major()
+std::string E5_ICE::get_major()
 {
     return major;
 }

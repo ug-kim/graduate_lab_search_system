@@ -28,7 +28,37 @@ std::string Lab::get_professor_name()
     return professor_name;
 }
 
+std::string Lab::get_career(){
+    return career;
+}
+
+std::string Lab::get_URL(){
+    return URL;
+}
+
+std::string Lab::get_field1(){
+    return 
+}
+
+std::string Lab::get_field2(){
+    return
+}
+
+std::string Lab::get_field3(){
+    return
+}
+
+void Lab::calculate_score(){
+
+}
+
 E3_ICE::E3_ICE(std::vector<std::string> information) : Lab(information) {}
+std::string E3_ICE::get_major()
+{
+    return major;
+}
+
+E5_ICE::E5_ICE(std::vector<std::string> information) : Lab(information) {}
 std::string E3_ICE::get_major()
 {
     return major;

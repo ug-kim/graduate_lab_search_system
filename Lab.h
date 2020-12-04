@@ -17,6 +17,7 @@ class Lab{
         std::string field1;
         std::string field2;
         std::string field3;
+
         
     public:
         Lab();
@@ -27,12 +28,36 @@ class Lab{
         std::string get_lab_name();
 
         std::string get_professor_name();
+
+        std::string get_career();
+
+        std::string get_URL();
+
+        std::string get_field1();
+
+        std::string get_field2();
+
+        std::string get_field3();
+
+        int score = 0;
+
+        void calculate_score();
 };
 
 class E3_ICE: public Lab{
     private:
         std::string major = "E3";
+
     public:
         E3_ICE(std::vector<std::string> information);
+        std::string get_major();
+};
+
+class E5_ICE: public Lab{
+    private:
+        std::string major = "E5";
+
+    public:
+        E5_ICE(std::vector<std::string> information);
         std::string get_major();
 };

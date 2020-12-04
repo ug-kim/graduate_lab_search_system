@@ -2,6 +2,8 @@
 #include "Labcontroller.h"
 #include "query.h"
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 int main(){
     using std::cin;
@@ -9,8 +11,7 @@ int main(){
     using std::endl;
     using std::string;
 
-
-    ifstream file;
+    std::ifstream file;
 
     Labcontroller Labcontrol;
     

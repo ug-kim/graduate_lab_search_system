@@ -36,8 +36,9 @@ int main(){
     }
   
     Query query;
+
     query.init_question();
 
     query.print();
-
 }
+

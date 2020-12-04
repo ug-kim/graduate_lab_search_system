@@ -58,11 +58,11 @@ void Lab::show_lab_information(){
 }
 
 std::string Lab::get_field2(){
-    return "";
+    return field2;
 }
 
 std::string Lab::get_field3(){
-    return "";
+    return field3;
 }
 
 void Lab::calculate_score(){
@@ -80,7 +80,6 @@ void Lab::calculate_score(){
         count++;
     }
 }
-
 
 E3_ICE::E3_ICE(std::vector<std::string> information) : Lab(information) {}
 std::string E3_ICE::get_major()

@@ -46,18 +46,9 @@ void Labcontroller::E5_sync_lab(std::vector<std::string> information)
 //     }
 // }
 
-
 void Labcontroller::show_lab(Lab* lab)
 {
-    // std::string answer;
-    // std::getline(std::cin, answer);
-
-    
+    lab->show_lab_information();    
 }
 
-
-int Labcontroller::get_size()
-{
-    return list.size();
-}
 

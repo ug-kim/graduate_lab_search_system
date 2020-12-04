@@ -21,7 +21,5 @@ class Labcontroller{
 
         void sub_lab();
 
-        int get_size();
-
         void show_lab(Lab* lab);
 };

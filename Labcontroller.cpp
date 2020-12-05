@@ -167,14 +167,21 @@ void Labcontroller::execute_controller() {
     init_no_major_querys();
 }
 
- void Labcontroller::restart_query() {
+ void Labcontroller::restart() {
+     init_lab_score(E3_list);
+     init_lab_score(E5_list);
+
+     //for (auto v : E5_list) {
+     //    std::cout << "score init? : " << v->score << std::endl;
+     //}
+    
      init_fields();
      init_question();
      print();
  }
 
 void Labcontroller::init_lab_score(std::vector<Lab*> list){
-    for(auto& a : list){
+    for(auto a : list){
         a->init_score();
     }
 }

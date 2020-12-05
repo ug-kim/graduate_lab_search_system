@@ -78,6 +78,7 @@ void Lab::calculate_score(const std::map<std::string, int>& w_fields){
     }
 }
 
+
 E3_ICE::E3_ICE(std::vector<std::string> information) : Lab(information) {}
 E3_ICE::E3_ICE(std::string lab_name,std::string professor_name) : Lab(lab_name, professor_name){}
 

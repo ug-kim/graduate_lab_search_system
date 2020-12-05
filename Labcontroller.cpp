@@ -1,4 +1,7 @@
 #include <algorithm>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 #include "Labcontroller.h"
 #include "Lab.h"
@@ -16,8 +19,43 @@ Labcontroller::~Labcontroller(){
     }
 
     E5_list.clear();
-    
 }
+
+void Labcontroller::readfile(std::string major, Labcontroller Labcontrol){
+    std::ifstream file;
+    if(major == "E3"){
+        file.open("ice_lab_db_final");
+    }
+    if(major == "E5"){
+        file.open("robotics_lab_db_final");
+    }
+
+    if(file.is_open()){
+        while(!file.eof()){
+            std::string content;
+            std::vector<std::string> input_information;
+            for(int i = 0; i < 7; i++){
+                if(i == 6){
+                    std::getline(file, content, '\n');
+                    input_information.push_back(content);
+                }
+                else{
+                    std::getline(file, content, ',');
+                    input_information.push_back(content);
+                }
+            }
+
+            if(major == "E3"){
+                Labcontrol.E3_sync_lab(input_information);
+            }
+
+            if(major == "E5"){
+                Labcontrol.E5_sync_lab(input_information);
+            }
+        }
+    }
+}
+
 void Labcontroller::E3_sync_lab(std::vector<std::string> information)
 {
     Lab *ptr = new E3_ICE(information); // Lab* ptr = new E3_ICE(information)
@@ -93,19 +131,35 @@ void Labcontroller::sort_lab(std::vector<Lab*>& input_list) {
 }
 
 void Labcontroller::execute_controller() {
-    std::cout << "Lab controller" << std::endl;
-    for (auto v : E5_list) {
-        v->calculate_score(w_fields);
+    if(major == "E5"){
+        for (auto v : E5_list) {
+            v->calculate_score(w_fields);
+        }
+        sort_lab(E5_list);
+        int count = 0;
+        for (auto v = E5_list.begin(); v != E5_list.end(); v++) {
+            if (count == 3) {
+                break;
+            }
+            (*v)->get_lab_name();
+            count++;
+        }    
     }
 
-    sort_lab(E5_list);
-    int count = 0;
-    for (auto v = E5_list.begin(); v != E5_list.end(); v++) {
-        if (count == 3) {
-            break;
+    if(major == "E3"){
+        for (auto v : E3_list) {
+            v->calculate_score(w_fields);
         }
-        (*v)->get_lab_name();
-        count++;
+
+        sort_lab(E3_list);
+        int count = 0;
+        for (auto v = E3_list.begin(); v != E3_list.end(); v++) {
+            if (count == 3) {
+                break;
+            }
+            (*v)->get_lab_name();
+            count++;
+        }    
     }
 }
 

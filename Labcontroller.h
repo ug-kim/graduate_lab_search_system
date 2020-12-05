@@ -17,7 +17,10 @@ class Labcontroller : public Query {
 
     public:
         Labcontroller();
+
         virtual ~Labcontroller(); //query destructor virtual 필요
+
+        void readfile(std::string major, Labcontroller Labcontrol);
 
         void E3_sync_lab(std::vector<std::string> information);
         

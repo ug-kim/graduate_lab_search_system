@@ -12,3 +12,7 @@
 ### Class diagram
 
 ![class_diagram](https://github.com/ug-kim/graduate_lab_search_system/blob/master/image/ClassDiagram.png)
+
+### Flow chart
+
+![flow_chart](https://github.com/ug-kim/graduate_lab_search_system/blob/master/image/flow_chart.png)

@@ -151,7 +151,7 @@ void Query::init_no_major_querys() {
 
     yes = { "vr", "machine learning", "network", "security", "control", "ar", "cyber-physical", "electronics", "autonomous driving", "image processing", "deep learning", "mechanics", "circuit", "hardware", "ai" };
     no = { "hci", "computer architecture", "operating system", "mobile", "embedded system", "flexible devices", "cloud", "edge computing", "biomedical"};
-    static Akinator a7("7. Are you interested in autuodiring system?\t(1) yes\t(2) no", yes, no);
+    static Akinator a7("7. Are you interested in autuodriving system?\t(1) yes\t(2) no", yes, no);
     no_major_questions.push_back(a7);
 
 }

@@ -21,6 +21,8 @@ Lab::Lab(std::vector<std::string> input_information)
     field3 = input_information[6];
 }
 
+Lab::~Lab() {};
+
 std::string Lab::get_lab_name()
 {
     return lab_name;

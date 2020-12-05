@@ -24,10 +24,10 @@ Labcontroller::~Labcontroller(){
 void Labcontroller::readfile(std::string major){
     std::ifstream file;
     if(major == "E3"){
-        file.open("ice_lab_db_final");
+        file.open("ice_lab_db_final.csv");
     }
     if(major == "E5"){
-        file.open("robotics_lab_db_final");
+        file.open("robotics_lab_db_final.csv");
     }
 
     if(file.is_open()){
@@ -135,21 +135,25 @@ void Labcontroller::execute_controller() {
         for (auto v : E5_list) {
             v->calculate_score(w_fields);
         }
+
+        std::cout << "E5 size: " << E5_list.size() << std::endl;
+
         sort_lab(E5_list);
         int count = 0;
         for (auto v = E5_list.begin(); v != E5_list.end(); v++) {
             if (count == 3) {
                 break;
             }
-            (*v)->get_lab_name();
+            std::cout << (*v)->get_lab_name() << std::endl;
+            std::cout << "fields: " << (*v)->get_field1() << " " << (*v)->get_field2() << " " << (*v)->get_field3() << std::endl;
             count++;
         }    
-    }
-
-    if(major == "E3"){
+    } else if(major == "E3"){
         for (auto v : E3_list) {
             v->calculate_score(w_fields);
         }
+
+        std::cout << "E3 size: " << E3_list.size() << std::endl;
 
         sort_lab(E3_list);
         int count = 0;
@@ -157,9 +161,30 @@ void Labcontroller::execute_controller() {
             if (count == 3) {
                 break;
             }
-            (*v)->get_lab_name();
+            std::cout << (*v)->get_lab_name() << std::endl;
+            std::cout << "fields: " << (*v)->get_field1() << " " << (*v)->get_field2() << " " << (*v)->get_field3() << std::endl;
             count++;
         }    
+    }
+    else {
+
+        std::vector<Lab*> whole_list;
+        whole_list.insert(whole_list.end(), E3_list.begin(), E3_list.end());
+        whole_list.insert(whole_list.end(), E5_list.begin(), E5_list.end());
+
+
+        std::cout << "Whole size: " << whole_list.size() << std::endl;
+
+        sort_lab(whole_list);
+        int count = 0;
+        for (auto v = whole_list.begin(); v != whole_list.end(); v++) {
+            if (count == 3) {
+                break;
+            }
+            std::cout << (*v)->get_lab_name() << std::endl;
+            std::cout << "fields: " << (*v)->get_field1() << " " << (*v)->get_field2() << " " << (*v)->get_field3() << std::endl;
+            count++;
+        }
     }
 }
 

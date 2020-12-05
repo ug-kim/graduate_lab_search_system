@@ -13,8 +13,6 @@ class Labcontroller : public Query {
       std::vector<Lab*> E3_list;
       std::vector<Lab*> E5_list;
 
-      std::vector<Lab*> whole_list;
-
     public:
         Labcontroller();
 

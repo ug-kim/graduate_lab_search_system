@@ -141,12 +141,13 @@ void Labcontroller::execute_controller() {
             if (count == 3) {
                 break;
             }
-            (*v)->get_lab_name();
+            (*v)->show_lab_information();
+            std::cout << std::endl;
             count++;
         }    
     }
 
-    if(major == "E3"){
+    else if(major == "E3"){
         for (auto v : E3_list) {
             v->calculate_score(w_fields);
         }
@@ -157,9 +158,31 @@ void Labcontroller::execute_controller() {
             if (count == 3) {
                 break;
             }
-            (*v)->get_lab_name();
+            (*v)->show_lab_information();
+            std::cout << std::endl;
             count++;
-        }    
+        }       
+    }
+    
+    else{   
+        std::vector<Lab*> whole_list;
+        whole_list.insert(whole_list.end(), E3_list.begin(), E3_list.end());
+        whole_list.insert(whole_list.end(), E5_list.begin(), E5_list.end());
+
+        for (auto v : whole_list) {
+            v->calculate_score(w_fields);
+        }
+
+        sort_lab(whole_list);
+        int count = 0;
+        for (auto v = whole_list.begin(); v != whole_list.end(); v++) {
+            if (count == 3) {
+                break;
+            }
+            (*v)->show_lab_information();
+            std::cout << std::endl;
+            count++;
+        }  
     }
 }
 

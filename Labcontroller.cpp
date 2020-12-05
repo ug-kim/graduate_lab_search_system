@@ -21,7 +21,7 @@ Labcontroller::~Labcontroller(){
     E5_list.clear();
 }
 
-void Labcontroller::readfile(std::string major, Labcontroller Labcontrol){
+void Labcontroller::readfile(std::string major){
     std::ifstream file;
     if(major == "E3"){
         file.open("ice_lab_db_final");
@@ -46,11 +46,11 @@ void Labcontroller::readfile(std::string major, Labcontroller Labcontrol){
             }
 
             if(major == "E3"){
-                Labcontrol.E3_sync_lab(input_information);
+                E3_sync_lab(input_information);
             }
 
             if(major == "E5"){
-                Labcontrol.E5_sync_lab(input_information);
+                E5_sync_lab(input_information);
             }
         }
     }

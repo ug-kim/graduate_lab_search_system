@@ -13,8 +13,8 @@ int main(){
     
     Labcontroller Labcontrol;
     
-    Labcontrol.readfile("E3", Labcontrol);
-    Labcontrol.readfile("E5", Labcontrol);  
+    Labcontrol.readfile("E3");
+    Labcontrol.readfile("E5");  
 
     while (true) {
         Labcontrol.start_query();

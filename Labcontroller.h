@@ -38,5 +38,8 @@ class Labcontroller : public Query {
 
         void start_query();
 
+        void restart_query();
+
         void init_lab_score(std::vector<Lab*> list);
+
 };

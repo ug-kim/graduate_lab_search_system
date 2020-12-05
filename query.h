@@ -59,6 +59,7 @@ public:
 
     // Case 2 - no major
     void init_no_major_querys();
+    void init_fields();
 private:
     // Case 1 - has major
     void have_major_query();

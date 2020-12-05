@@ -14,10 +14,12 @@ int main(){
     Labcontroller Labcontrol;
     
     Labcontrol.readfile("E3");
-    Labcontrol.readfile("E5");  
+    Labcontrol.readfile("E5"); 
+
+    Labcontrol.start_query();
 
     while (true) {
-        Labcontrol.start_query();
+        Labcontrol.restart_query();
         Labcontrol.execute_controller();
         std::cout << "FINISH" << std::endl;
         std::string answer;

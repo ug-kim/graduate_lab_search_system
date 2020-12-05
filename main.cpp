@@ -19,7 +19,7 @@ int main(){
     Labcontrol.start_query();
 
     while (true) {
-        Labcontrol.restart_query();
+        Labcontrol.restart();
         Labcontrol.execute_controller();
         std::cout << "FINISH" << std::endl;
         std::string answer;
@@ -29,12 +29,5 @@ int main(){
             break;
         }
     }
-
     return 0;
-
-    // Query query;
-    // query.init_question();
-
-    // query.print();
-
 }

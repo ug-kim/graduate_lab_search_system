@@ -47,6 +47,8 @@ class Lab {
 
         int score = 0;
 
+        void init_score();
+
         void calculate_score(const std::map<std::string, int>& w_fields);
 };
 

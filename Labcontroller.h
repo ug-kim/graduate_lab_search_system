@@ -17,6 +17,8 @@ class Labcontroller : public Query {
 
     public:
         Labcontroller();
+        virtual ~Labcontroller() override; //query destructor virtual 필요
+
         void E3_sync_lab(std::vector<std::string> information);
         
         void E5_sync_lab(std::vector<std::string> information);
@@ -25,9 +27,11 @@ class Labcontroller : public Query {
 
         void sub_lab();
 
+        void delete_lab(std::vector<Lab*> list, std::string answer);
+
         void show_lab(Lab* lab);
 
-        void sort_lab(std::vector<Lab*>& input_list);
+        void sort_lab(std::vector<Lab*>& input_list); //goto start 쓰려면 sort할때 다른 컨테이너를 만들어야함.
 
         void execute_controller();
 };

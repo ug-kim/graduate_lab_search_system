@@ -22,6 +22,9 @@ class Lab {
         
     public:
         Lab();
+
+        virtual ~Lab();
+
         Lab(std::string i_lab_name, std::string i_professor_name);
 
         Lab(std::vector<std::string> input_information);
@@ -53,6 +56,10 @@ class E3_ICE: public Lab{
 
     public:
         E3_ICE(std::vector<std::string> information);
+        E3_ICE(std::string lab_name,std::string professor_name);
+
+        virtual ~E3_ICE();
+
         std::string get_major();
 };
 
@@ -62,5 +69,9 @@ class E5_ROBOT: public Lab{
 
     public:
         E5_ROBOT(std::vector<std::string> information);
+        E5_ROBOT(std::string lab_name,std::string professor_name);
+
+        virtual ~E5_ROBOT();
+
         std::string get_major();
 };

@@ -77,12 +77,16 @@ void Lab::calculate_score(const std::map<std::string, int>& w_fields){
 }
 
 E3_ICE::E3_ICE(std::vector<std::string> information) : Lab(information) {}
+E3_ICE::E3_ICE(std::string lab_name,std::string professor_name) : Lab(lab_name, professor_name){}
+
 std::string E3_ICE::get_major()
 {
     return major;
 }
 
 E5_ROBOT::E5_ROBOT(std::vector<std::string> information) : Lab(information) {}
+E5_ROBOT::E5_ROBOT(std::string lab_name,std::string professor_name) : Lab(lab_name, professor_name){}
+
 std::string E5_ROBOT::get_major()
 
 {

@@ -24,10 +24,10 @@ Labcontroller::~Labcontroller(){
 void Labcontroller::readfile(std::string major){
     std::ifstream file;
     if(major == "E3"){
-        file.open("ice_lab_db_final.csv");
+        file.open("./database/ice_lab_db_final.csv");
     }
     if(major == "E5"){
-        file.open("robotics_lab_db_final.csv");
+        file.open("./database/robotics_lab_db_final.csv");
     }
 
     if(file.is_open()){

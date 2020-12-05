@@ -138,7 +138,7 @@ void Labcontroller::execute_controller() {
         sort_lab(E5_list);
         int count = 0;
         for (auto v = E5_list.begin(); v != E5_list.end(); v++) {
-            if (count == 3) {
+            if (count == 3 || (*v)->score == 0) {
                 break;
             }
             (*v)->show_lab_information();
@@ -155,7 +155,7 @@ void Labcontroller::execute_controller() {
         sort_lab(E3_list);
         int count = 0;
         for (auto v = E3_list.begin(); v != E3_list.end(); v++) {
-            if (count == 3) {
+            if (count == 3 || (*v)->score == 0) {
                 break;
             }
             (*v)->show_lab_information();
@@ -163,7 +163,7 @@ void Labcontroller::execute_controller() {
             count++;
         }       
     }
-    
+
     else{   
         std::vector<Lab*> whole_list;
         whole_list.insert(whole_list.end(), E3_list.begin(), E3_list.end());
@@ -176,7 +176,7 @@ void Labcontroller::execute_controller() {
         sort_lab(whole_list);
         int count = 0;
         for (auto v = whole_list.begin(); v != whole_list.end(); v++) {
-            if (count == 3) {
+            if (count == 3 || (*v)->score == 0) {
                 break;
             }
             (*v)->show_lab_information();

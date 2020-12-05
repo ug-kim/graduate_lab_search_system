@@ -172,6 +172,7 @@ void Query::no_major_query() {
     for (auto iter = no_major_questions.begin(); iter != no_major_questions.end(); iter++) {
         std::cout << iter->question << std::endl;
         try {
+            //TODO : num index
             std::cin >> num;
             if (num == 1) {
                 count_fields(iter->yes_list);
@@ -241,4 +242,8 @@ void Query::print() {
         std::cout << v.first << " " << v.second << std::endl;
     }
     std::cout << "------------------------" << std::endl;
+}
+
+void Query::init_fields() {
+    fields.clear();
 }

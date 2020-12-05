@@ -190,6 +190,10 @@ void Labcontroller::execute_controller() {
 
  void Labcontroller::start_query() {
     init_no_major_querys();
-    init_question();
-    print();
 }
+
+ void Labcontroller::restart_query() {
+     init_fields();
+     init_question();
+     print();
+ }

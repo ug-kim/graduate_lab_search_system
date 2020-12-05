@@ -20,13 +20,13 @@ Labcontroller::~Labcontroller(){
 }
 void Labcontroller::E3_sync_lab(std::vector<std::string> information)
 {
-    E3_ICE *ptr = new E3_ICE(information); // Lab* ptr = new E3_ICE(information)
+    Lab *ptr = new E3_ICE(information); // Lab* ptr = new E3_ICE(information)
     E3_list.push_back(ptr);
 }
 
 void Labcontroller::E5_sync_lab(std::vector<std::string> information)
 {
-    Lab *ptr = new Lab(information); // Lab* ptr = new E5_ROBOT(information)
+    Lab *ptr = new E5_ROBOT(information); // Lab* ptr = new E5_ROBOT(information)
     E5_list.push_back(ptr);
 }
 
@@ -99,10 +99,18 @@ void Labcontroller::execute_controller() {
     }
 
     sort_lab(E5_list);
-
-    for (auto v = E5_list.begin(); v != v+3; v++) {
-        show_lab(*v);
+    int count = 0;
+    for (auto v = E5_list.begin(); v != E5_list.end(); v++) {
+        if (count == 3) {
+            break;
+        }
+        (*v)->get_lab_name();
+        count++;
     }
+}
 
-
+ void Labcontroller::start_query() {
+    init_no_major_querys();
+    init_question();
+    print();
 }

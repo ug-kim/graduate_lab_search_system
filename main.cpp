@@ -38,19 +38,20 @@ int main(){
     }
   
 
-    Labcontrol.execute_controller();
-    std::string answer;
-    std::cout << "Do you want to play again?\n 1.Yes \t 2.No" << std::endl;
-    std::cin >> answer;
-    if(answer == "1"){
-        Labcontrol.~Labcontroller();
-        goto Start;
-    }
-    else{
-        return 0;
+    while (true) {
+        
+        Labcontrol.start_query();
+        Labcontrol.execute_controller();
+        std::cout << "FINISH" << std::endl;
+        std::string answer;
+        std::cout << "Do you want to play again?\n 1.Yes \t 2.No" << std::endl;
+        std::cin >> answer;
+        if (answer == "2") {
+            break;
+        }
     }
 
-
+    return 0;
 
     // Query query;
     // query.init_question();

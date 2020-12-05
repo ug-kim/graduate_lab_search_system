@@ -14,9 +14,9 @@ Query::Query() {
         union_counts.insert(std::make_pair(key, 0));
     }
 
-    init_no_major_querys();
-    init_question();
-    print();
+    // init_no_major_querys();
+    // init_question();
+    // print();
 }
 
 void Query::init_question() {

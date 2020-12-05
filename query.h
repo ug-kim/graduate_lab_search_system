@@ -56,6 +56,9 @@ public:
     Query();
     void init_question();
     void print();
+
+    // Case 2 - no major
+    void init_no_major_querys();
 private:
     // Case 1 - has major
     void have_major_query();
@@ -63,7 +66,6 @@ private:
     void select_robotics();
 
     // Case 2 - no major
-    void init_no_major_querys();
     void count_fields(std::vector<std::string> candidates);
     void no_major_query();
     void update_fields();

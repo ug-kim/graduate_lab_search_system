@@ -54,11 +54,11 @@ std::string Lab::get_field3(){
 }
 
 void Lab::show_lab_information(){
-    std::cout << "Lab name: " << lab_name << std::endl;
+    std::cout << "\nLab name: " << lab_name << std::endl;
     std::cout << "professor name: " << professor_name << std::endl;
     std::cout << "career: " << career << std::endl;
     std::cout << "URL: " << URL << std::endl;
-    std::cout << "field :" << field1 << "," << field2 << "," << field3 << std::endl;
+    std::cout << "field :" << field1 << " " << field2 << " " << field3 << std::endl;
     return;
 }
 

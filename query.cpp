@@ -47,7 +47,7 @@ void Query::init_question() {
 
 void Query::have_major_query() {
     int check = 0;
-    std::cout << "Select Major\n1. E3 (Information and Communication Engineering)\n2. E5 (Robotics Engineering)" << std::endl;
+    std::cout << "\nSelect Major\n1. E3 (Information and Communication Engineering)\n2. E5 (Robotics Engineering)" << std::endl;
     
     try {
         std::cin >> check;
@@ -71,12 +71,12 @@ void Query::have_major_query() {
 
 void Query::select_ice() {
     int idx;
-    std::cout << "Choice List" << std::endl;
+    std::cout << "\nChoice List" << std::endl;
     for (int i = 0; i < size(ice_fields); i++) {
         std::cout << (i + 1) << ". " << ice_fields[i] << std::endl;
     }
 
-    std::cout << "Choose 3 fields in order of preference" << std::endl;
+    std::cout << "\nChoose 3 fields in order of preference" << std::endl;
     for (int i = 0; i < 3; i++) {
         if (i == 0) std::cout << i + 1 << "st preference : ";
         if (i == 1) std::cout << i + 1 << "nd preference : ";
@@ -92,12 +92,12 @@ void Query::select_ice() {
 
 void Query::select_robotics() {
     int idx;
-    std::cout << "Choice List" << std::endl;
+    std::cout << "\nChoice List" << std::endl;
     for (int i = 0; i < size(robot_fields); i++) {
         std::cout << (i + 1) << ". " << robot_fields[i] << std::endl;
     }
 
-    std::cout << "Choose 3 fields in order of preference" << std::endl;
+    std::cout << "\nChoose 3 fields in order of preference" << std::endl;
     for (int i = 0; i < 3; i++) {
         if (i == 0) std::cout << i + 1 << "st preference : ";
         if (i == 1) std::cout << i + 1 << "nd preference : ";
@@ -205,7 +205,7 @@ void Query::update_fields() {
     int count = 0;
     for (auto num : vec) {
         if (count == 3) break;
-        std::cout << "key: " << num.first << " value: " << num.second << std::endl;
+        // std::cout << "key: " << num.first << " value: " << num.second << std::endl;
         fields.push_back(num.first);
         count++;
     }

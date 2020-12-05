@@ -142,7 +142,6 @@ void Labcontroller::execute_controller() {
                 break;
             }
             (*v)->show_lab_information();
-            std::cout << std::endl;
             count++;
         }    
     }
@@ -159,7 +158,6 @@ void Labcontroller::execute_controller() {
                 break;
             }
             (*v)->show_lab_information();
-            std::cout << std::endl;
             count++;
         }       
     }
@@ -180,7 +178,6 @@ void Labcontroller::execute_controller() {
                 break;
             }
             (*v)->show_lab_information();
-            std::cout << std::endl;
             count++;
         }  
     }
@@ -200,7 +197,7 @@ void Labcontroller::execute_controller() {
     
      init_fields();
      init_question();
-     print();
+     // print();
  }
 
 void Labcontroller::init_lab_score(std::vector<Lab*> list){

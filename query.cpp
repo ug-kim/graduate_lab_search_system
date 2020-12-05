@@ -246,4 +246,5 @@ void Query::print() {
 
 void Query::init_fields() {
     fields.clear();
+    w_fields.clear();
 }

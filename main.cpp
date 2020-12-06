@@ -21,7 +21,7 @@ int main(){
     while (true) {
         Labcontrol.restart();
         Labcontrol.execute_controller();
-        std::cout << "FINISH" << std::endl;
+        std::cout << "\nFINISH" << std::endl;
         std::string answer;
         std::cout << "\nDo you want to play again?\n 1.Yes \t 2.No" << std::endl;
         std::cin >> answer;
